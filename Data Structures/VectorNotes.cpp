@@ -1,75 +1,87 @@
-#include <bits-stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    int n,m,key,i,j,value;vector <int> vrr1;
-    /*Vector: a class in STL that represents an array.
-    Supports dynamic sizes and resizing. */
+  int n, m, key, i, j, value;
+  vector<int> vrr1;
+  /*Vector: a class in STL that represents an array.
+  Supports dynamic sizes and resizing. */
+  // Declarations:
+  vector<int> vrr;
+  vector<int> vect1(n, 10);
+  vector<int> vect1{10, 20, 30};
+  vector<string> str_arr1 = {"Sunny Cove", "Willow Cove"};
 
-    vector <int> vrr; 
+  // returns no of elements in vector
+  vrr.size();
 
-    // Create a vector of size n withall values as 10.
-    vector<int> vect(n, 10);
+  // pushes element at end of vector
+  vrr.push_back(10);
 
-    //returns no of elements in vector
-    vrr.size();
+  // input elements
+  for (int i = 0; i < n; i++)
+  {
+    cin >> key;
+    vrr.push_back(key);
+  }
 
-    //pushes element at end of vector
-    vrr.push_back(10);
+  // display elements
+  for (int i = 0; i < vrr.size(); i++)
+  {
+    cout << vrr[i]; // or vrr.at(i);
+  }
 
-    //input elements
-    for(int i=0;i<n;i++)
-    {cin>>key;
-    vrr.push_back(key);}  
+  // input & display elements
+  vector<int> vrr(n);
+  for (int i = 0; i < n; i++)
+  {
+    cin >> vrr[i];
+    cout << vrr[i];
+  }
 
-    //display elements
-    for(int i=0;i<vrr.size();i++)
-    {cout<<vrr[i]; //or vrr.at(i);
-    }
+  // returns first & last element
+  vrr.front();
+  vrr.back();
 
-    //input & display elements 
-    vector <int> vrr(n);
-    for(int i=0;i<n;i++)
-    {cin>>vrr[i];
-    cout<<vrr[i];} 
+  // swaps value of vector 1 with 2
+  vrr1.swap(vrr);
 
-    //returns first & last element
-    vrr.front();  vrr.back();  
+  // deletes all elements in vector
+  vrr.clear();
 
-    //swaps value of vector 1 with 2
-    vrr1.swap(vrr); 
+  // used to check if vector is empty or not
+  vrr.empty();
 
-    //deletes all elements in vector
-    vrr.clear(); 
+  // reverses a vector
+  reverse(vrr.begin(), vrr.end());
 
-    //used to check if vector is empty or not
-    vrr.empty(); 
+  // Iterators
+  for (auto it = vrr.begin(); it != vrr.end(); it++)
+    cout << *it << " ";
 
-    //reverses a vector 
-    reverse(vrr.begin(),vrr.end());
+  for (auto &i : vrr)
+    cout << vrr[i];
 
-    //Iterators
-    for(auto it = vrr.begin(); it!=vrr.end(); it++)
-        cout<<*it<<" ";
+  // Reverse Iterators
+  for (auto it = vrr.rbegin(); it != vrr.rend(); it++)
+    cout << *it << " ";
 
-    for(auto &i : vrr)
-      cout<<vrr[i];
+  // Transform:-
+  // 1. returns square
 
-    //Reverse Iterators
-    for(auto it = vrr.rbegin(); it!=vrr.rend(); it++)
-      cout<<*it<<" ";
+  int Multiply(int x)
+  {
+    return (x * x);
+  }
+  transform(vrr.begin(), vrr.end(), vrr.begin(), Multiply);
 
-    //Transform:- 
-         //1. returns square
-   
-    int Multiply(int x) 
-    {return (x*x);} 
-    transform(vrr.begin(),vrr.end(),vrr.begin(),Multiply);
+  // Count:-
+  // 1. counts number of time value appears
+  count(vrr.begin(), vrr.end(), value);
 
-    //Count:-
-        //1. counts number of time value appears
-    count(vrr.begin(), vrr.end(), value); 
+  // To find max element: *max_element (first_index, last_index);
+  *max_element(vrr.begin(), vrr.end());
 
-    return 0;
+  return 0;
 }
